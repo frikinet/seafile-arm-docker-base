@@ -4,7 +4,7 @@
 
 Currently SQLITE only.
 
-This project uses [a forked version]( https://github.com/ChatDeBlofeld/seafile-rpi ) of the [Seafile for Raspberry PI]( https://github.com/haiwen/seafile-rpi ) build script.
+This project uses [a forked version]( https://github.com/frikinet/seafile-rpi ) of the [Seafile for Raspberry PI]( https://github.com/haiwen/seafile-rpi ) build script.
 
 ## Build
 
@@ -22,7 +22,7 @@ Script usage:
 Example:
 
 ```
-./build-image.sh -t 7.1.9 -t latest -l amd64
+./build-image.sh -t 8.0.3 -t latest -l arm/v7
 ```
 
 ##  Run
@@ -30,13 +30,13 @@ Example:
 Installation:
 
 ```
-docker run -it --rm -v /path/to/seafile/data/:/shared franchetti/seafile-arm /docker_entrypoint.sh init
+docker run -it --rm -v /path/to/seafile/data/:/shared frikinet/seafile-arm /docker_entrypoint.sh init
 ```
 
 Run:
 
 ```
-docker run -v /path/to/seafile/data/:/shared franchetti/seafile-arm
+docker run -v /path/to/seafile/data/:/shared frikinet/seafile-arm
 ```
 
 >Note: You may have to expose some ports with `-p` depending on what you're trying to achieve.
