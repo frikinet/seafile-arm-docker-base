@@ -35,6 +35,7 @@ then
     ln -s /shared/seafile-data .
     ln -s /shared/seahub-data .
     ln -s /shared/logs .
+    ln -s /shared/seahub.db ./seahub.db
     ln -s /shared/media ./seafile-server-latest/seahub
 fi
 

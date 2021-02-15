@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get install -y \
     sudo
 
 # Build seafile
-RUN wget https://raw.githubusercontent.com/ChatDeBlofeld/seafile-rpi/v${VERSION}/build3.sh
+RUN wget https://raw.githubusercontent.com/frikinet/seafile-rpi/v${VERSION}/build3.sh
 RUN chmod u+x build3.sh && ./build3.sh $VERSION server
 
 # Extract package
@@ -30,14 +30,14 @@ ARG VERSION
 
 RUN apt-get update && apt-get install -y \
     sudo \
+    sqlite3 \
     procps \
     libmariadb-dev \
     python3 \
     python3-setuptools \
     python3-ldap \
     python3-sqlalchemy \
-    # Mysql init script requirement only. Will probably be useless in the future
-    python3-pymysql \
+    python3-pil \
     # Folowing libs are useful for the armv7 arch only
     # Since they're not heavy, no need to create separate pipelines atm
     libjpeg62-turbo \
